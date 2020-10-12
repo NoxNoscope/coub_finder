@@ -1,7 +1,7 @@
 from PyQt5 import QtWidgets, uic
 import sys
 from PyQt5.QtGui import *
-from coub_dl import Coub
+from recurces.lib_thingy.coub_dl import Coub
 from recurces.theme import Theme
 
 
