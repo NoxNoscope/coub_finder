@@ -1,9 +1,8 @@
 from PyQt5 import QtWidgets, uic
 import sys
 from PyQt5.QtGui import *
-from PyQt5.QtCore import *
 from coub_dl import Coub
-from theme import Theme
+from recurces.theme import Theme
 
 
 
@@ -13,7 +12,7 @@ class Ui(QtWidgets.QMainWindow):
         uic.loadUi('main_window.ui', self) # Load the .ui file
 
         self.show() # Show the GUI
-        self.downloadbtn.setIcon(QIcon('quicDownloadBtn.png'))
+        self.downloadbtn.setIcon(QIcon('recurces/quicDownloadBtn.png'))
         
         self.downloadbtn.clicked.connect(self.download)
 
