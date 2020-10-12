@@ -1,5 +1,5 @@
 # this code is from this dude https://github.com/steam3d/coub-dl
-# i have no clue how to do this corectly so idk here ya go
+# i have no clue how to do this corectly so idk.py here ya go
 import requests, urllib.request, json
 
 
