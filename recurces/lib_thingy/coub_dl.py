@@ -20,10 +20,10 @@ class Coub:
 	
 	def saveData(self, dldata, fn):
 		if fn[-3:] == 'mp4':
-			with open(fn, 'wb') as f:
+			with open("downloads/" + fn, 'wb') as f:
 				f.write(b'\x00\x00' + dldata.read()[2:])
 		if fn[-3:] == 'mp3':
-			with open(fn, 'wb') as f:
+			with open("downloads/" + fn, 'wb') as f:
 				f.write(dldata.read())
 	
 	def fileName(self, data, ftype, addlink):
@@ -54,10 +54,39 @@ class Coub:
 	
 	def audio(self, url, addlink=True):
 		self.video(url, addlink, audio=True)
+		
+	
+	def lowvideo(self, url, addlink=True, audio=False):
+		
+		if audio == True:
+			formt = "audio"
+		else:
+			formt = "video"
+		try:
+			data = self.connect(url)
+			try:
+				directlink = data["file_versions"]["html5"][formt]["low"]["url"]
+			except:
+				directlink = data["file_versions"]["html5"][formt]["med"]["url"]
+			fn = self.fileName(data, directlink[-3:], addlink)
+			
+			opener = urllib.request.build_opener()
+			opener.addheaders = [("User-agent", "Mozilla/5.0")]
+			dldata = opener.open(directlink)
+			
+			if fn[-3:] == 'mp4':
+				with open("tmp/tmp.mp4", 'wb') as f:
+					f.write(b'\x00\x00' + dldata.read()[2:])
+			
+			
+		except:
+			print(self.error)
+		
 
 
 if __name__ == "__main__":
 	url = 'https://coub.com/view/iyd2d'
 	coub = Coub()
 	coub.video(url)
+	coub.lowvideo(url)
 	coub.audio(url)
