@@ -19,7 +19,7 @@ class Ui(QtWidgets.QMainWindow):
         self.downloadbtn.setIcon(QIcon('recurces/quicDownloadBtn.png'))
 
         self.mediaPlayer = QtMultimedia.QMediaPlayer(self)
-        self.mediaPlayer.setVideoOutput(self.widget)
+        self.mediaPlayer.setVideoOutput(self.videowidget)
         
         
         self.downloadbtn.clicked.connect(self.download)
@@ -42,9 +42,9 @@ class Ui(QtWidgets.QMainWindow):
 
 app = QtWidgets.QApplication(sys.argv) # Create an instance of QtWidgets.QApplication
 
-app.setStyle("Fusion")
+app.setStyle("Fusion") # adding some style that makes more things dark
 them = Theme()
-app.setPalette(them.dark())
+app.setPalette(them.dark()) # adding the dark theme thats currently in that file, it can be modified to anything of anyones liking
 
 window = Ui() # Create an instance of our class
 app.exec_() # Start the application

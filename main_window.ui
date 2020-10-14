@@ -46,7 +46,7 @@
      <bool>true</bool>
     </property>
    </widget>
-   <widget class="QVideoWidget" name="widget" native="true">
+   <widget class="QVideoWidget" name="videowidget" native="true">
     <property name="geometry">
      <rect>
       <x>10</x>
