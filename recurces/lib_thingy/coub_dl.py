@@ -54,7 +54,6 @@ class Coub:
 	
 	def audio(self, url, addlink=True):
 		self.video(url, addlink, audio=True)
-		
 	
 	def lowvideo(self, url, addlink=True, audio=False):
 		
@@ -77,11 +76,10 @@ class Coub:
 			if fn[-3:] == 'mp4':
 				with open("tmp/tmp.mp4", 'wb') as f:
 					f.write(b'\x00\x00' + dldata.read()[2:])
-			
-			
+		
+		
 		except:
 			print(self.error)
-		
 
 
 if __name__ == "__main__":

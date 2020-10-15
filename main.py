@@ -23,6 +23,7 @@ class Ui(QtWidgets.QMainWindow):
         
         
         self.downloadbtn.clicked.connect(self.download)
+        self.restartButton.clicked.connect(self.restart_program)
 
 
     def download(self):
@@ -39,6 +40,12 @@ class Ui(QtWidgets.QMainWindow):
         
         self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(os.getcwd() + "/tmp/tmp.mp4")))
         self.mediaPlayer.play()
+        
+    def restart_program(self):
+        """Restarts the current program, with file objects and descriptors
+           cleanup
+        """
+        os.execl(sys.executable, *([sys.executable] + sys.argv))
 
 app = QtWidgets.QApplication(sys.argv) # Create an instance of QtWidgets.QApplication
 
