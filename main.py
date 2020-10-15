@@ -110,57 +110,6 @@ class Ui(QtWidgets.QMainWindow):
 			yaml.dump(data, stream)
 
 
-import os
-
-
-mydir = "Resources"
-# If folder doesn't exist, then create it.
-if not os.path.isdir(mydir):
-	os.makedirs(mydir)
-
-
-
-mydir = "downloads"
-# If folder doesn't exist, then create it.
-if not os.path.isdir(mydir):
-	os.makedirs(mydir)
-
-
-
-mydir = "Resources/tmp"
-# If folder doesn't exist, then create it.
-if not os.path.isdir(mydir):
-	os.makedirs(mydir)
-
-
-mydir = "Resources/setting.yaml"
-# If folder file exist, then create it.
-if not os.path.isfile(mydir):
-	contents = ["audioCheckBox: true", "previewCheckBox: true", "videoCheckBox: false"]
-	with open('Resources/setting.yaml', 'a') as f:
-		for x in contents:
-			f.write(x)
-			f.write("\n")
-
-
-mydir = "Resources/lib_thingy"
-# If folder doesn't exist, then create it.
-if not os.path.isdir(mydir):
-	os.makedirs(mydir)
-
-
-mydir = "Resources/lib_thingy"
-# If folder doesn't exist, then create it.
-if not os.path.isdir(mydir):
-	os.makedirs(mydir)
-
-
-mydir = "Resources/lib_thingy"
-# If folder doesn't exist, then create it.
-if not os.path.isdir(mydir):
-	os.makedirs(mydir)
-
-
 
 
 app = QtWidgets.QApplication(sys.argv)  # Create an instance of QtWidgets.QApplication
