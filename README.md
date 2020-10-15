@@ -1,10 +1,12 @@
 # coub_finder
-a coub audio downloader with gui
+a coub audio and video downloader with gui
 
 
-# requirements
-pyqt5
+# plans for the future
+stitch audio and video together
+song identifier
+more/better themes
 
-this code is from this person (its in main/recurces/lib_thingy/coub_dl.py) https://github.com/steam3d/coub-dl
+
 
 
