@@ -34,6 +34,9 @@ class Ui(QtWidgets.QMainWindow):
 		self.previewCheckBox.stateChanged.connect(self.previewCheckBox_toggle)
 	
 	def download(self):
+		"""
+		downloads the selected files and clears lineeddit, and displays a small preview
+		"""
 		
 		url = self.lineEdit.text()
 		
@@ -59,6 +62,9 @@ class Ui(QtWidgets.QMainWindow):
 		os.execl(sys.executable, *([sys.executable] + sys.argv))
 	
 	def audioCheckBox_toggle(self):
+		"""
+		changes the audiocheckbox setting based on whats checked
+		"""
 		if self.setting["audioCheckBox"] is False:
 			self.setting["audioCheckBox"] = True
 		
@@ -68,6 +74,9 @@ class Ui(QtWidgets.QMainWindow):
 		self.yaml_dump(self.setting)
 	
 	def videoCheckBox_toggle(self):
+		"""
+		changes the videocheckbox setting based on whats checked
+		"""
 		if self.setting["videoCheckBox"] is False:
 			self.setting["videoCheckBox"] = True
 		
@@ -77,6 +86,9 @@ class Ui(QtWidgets.QMainWindow):
 		self.yaml_dump(self.setting)
 	
 	def previewCheckBox_toggle(self):
+		"""
+		changes the previewCheckBox setting based on whats checked
+		"""
 		if self.setting["previewCheckBox"] is False:
 			self.setting["previewCheckBox"] = True
 		
@@ -86,11 +98,13 @@ class Ui(QtWidgets.QMainWindow):
 		self.yaml_dump(self.setting)
 	
 	def yaml_load(self):
+		"""loads the yml config"""
 		with open('recurces/setting.yaml', "r") as stream:
 			setting = yaml.full_load(stream)
 		return setting
 	
 	def yaml_dump(self, data):
+		"""dumps to the yml config"""
 		print(self.setting)
 		with open('recurces/setting.yaml', 'w') as stream:
 			yaml.dump(data, stream)
