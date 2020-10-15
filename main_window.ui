@@ -69,7 +69,7 @@
      <string>restart</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox">
+   <widget class="QCheckBox" name="audioCheckBox">
     <property name="geometry">
      <rect>
       <x>190</x>
@@ -82,7 +82,7 @@
      <string>audio</string>
     </property>
    </widget>
-   <widget class="QCheckBox" name="checkBox_2">
+   <widget class="QCheckBox" name="videoCheckBox">
     <property name="geometry">
      <rect>
       <x>190</x>
