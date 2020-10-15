@@ -5,9 +5,10 @@ from PyQt5.QtCore import QUrl
 from PyQt5.QtGui import *
 from PyQt5.QtMultimedia import QMediaContent
 import yaml
-
-from recurces.lib_thingy.coub_dl import Coub
-from recurces.theme import Theme
+import os.path
+from os import path
+from Resources.lib_thingy.coub_dl import Coub
+from Resources.theme import Theme
 
 
 class Ui(QtWidgets.QMainWindow):
@@ -16,7 +17,7 @@ class Ui(QtWidgets.QMainWindow):
 		
 		super(Ui, self).__init__()  # Call the inherited classes __init__ method
 		uic.loadUi('main_window.ui', self)  # Load the .ui file
-		self.downloadbtn.setIcon(QIcon('recurces/quicDownloadBtn.png'))
+		self.downloadbtn.setIcon(QIcon('Resources/quicDownloadBtn.png'))
 		
 		self.mediaPlayer = QtMultimedia.QMediaPlayer(self)
 		self.mediaPlayer.setVideoOutput(self.videowidget)
@@ -49,7 +50,7 @@ class Ui(QtWidgets.QMainWindow):
 		
 		if self.previewCheckBox.isChecked():
 			coub.lowvideo(url, addlink=False)
-			self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(os.getcwd() + "/tmp/tmp.mp4")))
+			self.mediaPlayer.setMedia(QMediaContent(QUrl.fromLocalFile(os.getcwd() + "/resources/tmp/tmp.mp4")))
 			self.mediaPlayer.play()
 		
 		self.lineEdit.clear()
@@ -99,15 +100,67 @@ class Ui(QtWidgets.QMainWindow):
 	
 	def yaml_load(self):
 		"""loads the yml config"""
-		with open('recurces/setting.yaml', "r") as stream:
+		with open('Resources/setting.yaml', "r") as stream:
 			setting = yaml.full_load(stream)
 		return setting
 	
 	def yaml_dump(self, data):
 		"""dumps to the yml config"""
-		print(self.setting)
-		with open('recurces/setting.yaml', 'w') as stream:
+		with open('Resources/setting.yaml', 'w') as stream:
 			yaml.dump(data, stream)
+
+
+import os
+
+
+mydir = "Resources"
+# If folder doesn't exist, then create it.
+if not os.path.isdir(mydir):
+	os.makedirs(mydir)
+
+
+
+mydir = "downloads"
+# If folder doesn't exist, then create it.
+if not os.path.isdir(mydir):
+	os.makedirs(mydir)
+
+
+
+mydir = "Resources/tmp"
+# If folder doesn't exist, then create it.
+if not os.path.isdir(mydir):
+	os.makedirs(mydir)
+
+
+mydir = "Resources/setting.yaml"
+# If folder file exist, then create it.
+if not os.path.isfile(mydir):
+	contents = ["audioCheckBox: true", "previewCheckBox: true", "videoCheckBox: false"]
+	with open('Resources/setting.yaml', 'a') as f:
+		for x in contents:
+			f.write(x)
+			f.write("\n")
+
+
+mydir = "Resources/lib_thingy"
+# If folder doesn't exist, then create it.
+if not os.path.isdir(mydir):
+	os.makedirs(mydir)
+
+
+mydir = "Resources/lib_thingy"
+# If folder doesn't exist, then create it.
+if not os.path.isdir(mydir):
+	os.makedirs(mydir)
+
+
+mydir = "Resources/lib_thingy"
+# If folder doesn't exist, then create it.
+if not os.path.isdir(mydir):
+	os.makedirs(mydir)
+
+
 
 
 app = QtWidgets.QApplication(sys.argv)  # Create an instance of QtWidgets.QApplication

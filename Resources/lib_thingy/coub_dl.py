@@ -74,7 +74,7 @@ class Coub:
 			dldata = opener.open(directlink)
 			
 			if fn[-3:] == 'mp4':
-				with open("tmp/tmp.mp4", 'wb') as f:
+				with open("Resources/tmp/tmp.mp4", 'wb') as f:
 					f.write(b'\x00\x00' + dldata.read()[2:])
 		
 		
