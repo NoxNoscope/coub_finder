@@ -51,39 +51,36 @@ class Ui(QtWidgets.QMainWindow):
 		
 		self.lineEdit.clear()
 	
-	def save_checkbox_settings(self):
-		# if self.audioCheckBox.isChecked():
-		pass
-	
 	def restart_program(self):
-		"""Restarts the current program, with file objects and descriptors
-		   cleanup
+		"""
+		Restarts the current program, with file objects and descriptors
+		cleanup
 		"""
 		os.execl(sys.executable, *([sys.executable] + sys.argv))
 	
 	def audioCheckBox_toggle(self):
-		if self.setting["audioCheckBox"] == False:
+		if self.setting["audioCheckBox"] is False:
 			self.setting["audioCheckBox"] = True
 		
-		elif self.setting["audioCheckBox"] == True:
+		elif self.setting["audioCheckBox"] is True:
 			self.setting["audioCheckBox"] = False
 		
 		self.yaml_dump(self.setting)
 	
 	def videoCheckBox_toggle(self):
-		if self.setting["videoCheckBox"] == False:
+		if self.setting["videoCheckBox"] is False:
 			self.setting["videoCheckBox"] = True
 		
-		elif self.setting["videoCheckBox"] == True:
+		elif self.setting["videoCheckBox"] is True:
 			self.setting["videoCheckBox"] = False
 		
 		self.yaml_dump(self.setting)
 	
 	def previewCheckBox_toggle(self):
-		if self.setting["previewCheckBox"] == False:
+		if self.setting["previewCheckBox"] is False:
 			self.setting["previewCheckBox"] = True
 		
-		elif self.setting["previewCheckBox"] == True:
+		elif self.setting["previewCheckBox"] is True:
 			self.setting["previewCheckBox"] = False
 		
 		self.yaml_dump(self.setting)
