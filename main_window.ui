@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>277</width>
+    <width>267</width>
     <height>195</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <widget class="QLineEdit" name="lineEdit">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>0</y>
       <width>231</width>
       <height>31</height>
@@ -27,7 +27,7 @@
    <widget class="QPushButton" name="downloadbtn">
     <property name="geometry">
      <rect>
-      <x>240</x>
+      <x>230</x>
       <y>0</y>
       <width>41</width>
       <height>31</height>
@@ -49,7 +49,7 @@
    <widget class="QVideoWidget" name="videowidget" native="true">
     <property name="geometry">
      <rect>
-      <x>10</x>
+      <x>0</x>
       <y>40</y>
       <width>171</width>
       <height>131</height>
@@ -59,7 +59,7 @@
    <widget class="QPushButton" name="restartButton">
     <property name="geometry">
      <rect>
-      <x>180</x>
+      <x>170</x>
       <y>120</y>
       <width>101</width>
       <height>51</height>
@@ -72,7 +72,7 @@
    <widget class="QCheckBox" name="audioCheckBox">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>180</x>
       <y>40</y>
       <width>86</width>
       <height>20</height>
@@ -85,7 +85,7 @@
    <widget class="QCheckBox" name="videoCheckBox">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>180</x>
       <y>70</y>
       <width>86</width>
       <height>20</height>
@@ -98,7 +98,7 @@
    <widget class="QCheckBox" name="previewCheckBox">
     <property name="geometry">
      <rect>
-      <x>190</x>
+      <x>180</x>
       <y>100</y>
       <width>86</width>
       <height>20</height>
@@ -114,7 +114,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>277</width>
+     <width>267</width>
      <height>22</height>
     </rect>
    </property>
