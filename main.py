@@ -7,8 +7,8 @@ from PyQt5.QtMultimedia import QMediaContent
 import yaml
 import os.path
 from os import path
-from Resources.lib_thingy.coub_dl import Coub
-from Resources.theme import Theme
+from resources.lib_thingy.coub_dl import Coub
+from resources.theme import Theme
 
 
 class Ui(QtWidgets.QMainWindow):
@@ -17,7 +17,7 @@ class Ui(QtWidgets.QMainWindow):
 		
 		super(Ui, self).__init__()  # Call the inherited classes __init__ method
 		uic.loadUi('main_window.ui', self)  # Load the .ui file
-		self.downloadbtn.setIcon(QIcon('Resources/quicDownloadBtn.png'))
+		self.downloadbtn.setIcon(QIcon('resources/quicDownloadBtn.png'))
 		
 		self.mediaPlayer = QtMultimedia.QMediaPlayer(self)
 		self.mediaPlayer.setVideoOutput(self.videowidget)
@@ -100,13 +100,13 @@ class Ui(QtWidgets.QMainWindow):
 	
 	def yaml_load(self):
 		"""loads the yml config"""
-		with open('Resources/setting.yaml', "r") as stream:
+		with open('resources/setting.yaml', "r") as stream:
 			setting = yaml.full_load(stream)
 		return setting
 	
 	def yaml_dump(self, data):
 		"""dumps to the yml config"""
-		with open('Resources/setting.yaml', 'w') as stream:
+		with open('resources/setting.yaml', 'w') as stream:
 			yaml.dump(data, stream)
 
 mydir = "downloads"
