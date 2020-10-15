@@ -109,6 +109,10 @@ class Ui(QtWidgets.QMainWindow):
 		with open('Resources/setting.yaml', 'w') as stream:
 			yaml.dump(data, stream)
 
+mydir = "downloads"
+# If folder doesn't exist, then create it.
+if not os.path.isdir(mydir):
+	os.makedirs(mydir)
 
 
 
